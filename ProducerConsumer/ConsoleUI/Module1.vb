@@ -13,22 +13,24 @@ Module Module1
             tasks.Add(consumer)
 
             Task.WaitAll(tasks.ToArray())
+
         Catch ex As Exception
+            Console.ForegroundColor = ConsoleColor.Red
+
             If (Typeof(ex) Is AggregateException) Then
 
                 Dim aggregateException = DirectCast(ex, AggregateException)
-
                 Dim flattenedException = aggregateException.Flatten()
 
-                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine(flattenedException.InnerException)
-                Return
+                Exit Try
             End If
 
             Console.WriteLine(ex)
         End Try
   
         Console.ForegroundColor = ConsoleColor.White
+        Console.WriteLine()
         Console.WriteLine("Press any key to exit...")
         Console.ReadKey()        
     End Sub

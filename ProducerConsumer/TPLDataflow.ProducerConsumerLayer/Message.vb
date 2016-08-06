@@ -3,6 +3,6 @@
     Public ReadOnly Data As String
 
     Public Sub New(data As string)
-        Data = data
+        Me.Data = data
     End Sub
 End Class
