@@ -25,7 +25,7 @@ Public NotInheritable Class ProducerConsumerDataflow
                 index = index + 1
 
                 If (producerTaskComplitionSource.Task.Status =TaskStatus.RanToCompletion) then
-                    Debugger.Break()
+                    'Debugger.Break()
                     Exit While
                 End If
             End While
