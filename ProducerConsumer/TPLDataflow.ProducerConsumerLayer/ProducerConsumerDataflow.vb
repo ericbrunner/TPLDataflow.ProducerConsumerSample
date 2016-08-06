@@ -18,10 +18,10 @@ Public NotInheritable Class ProducerConsumerDataflow
             While True
                 Dim message As Message = New Message($"Message {index}")
 
-                Await messageBlock.SendAsync(message)
+                Await messageBlock.SendAsync(message).ConfigureAwait(False)
 
                 ' simulate a task processing time
-                Await Task.Delay(100)
+                Await Task.Delay(100).ConfigureAwait(False)
                 index = index + 1
 
                 If (producerTaskComplitionSource.Task.Status =TaskStatus.RanToCompletion) then
@@ -34,7 +34,7 @@ Public NotInheritable Class ProducerConsumerDataflow
             producerTaskComplitionSource.SetException(ex)
         End Try
 
-        Await producerTaskComplitionSource.Task
+        Await producerTaskComplitionSource.Task.ConfigureAwait(False)
     End Function
 
     Public Shared Async Function StartConsumerAsync() As Task
@@ -71,8 +71,7 @@ Public NotInheritable Class ProducerConsumerDataflow
                                                                
                                                                Console.WriteLine($"Boom! Task:{faultedTask.Id} exited in State:{faultedTask.Status}")
                                                                Throw faultedTask.Exception
-                                                           End Sub)
-
+                                                           End Sub).ConfigureAwait(False)
         Catch ex As Exception
             tcs.SetException(ex)
 
@@ -85,6 +84,6 @@ Public NotInheritable Class ProducerConsumerDataflow
             Console.WriteLine($"producerTaskComplitionSource Task Status: {producerTaskComplitionSource.Task.Status}")
         End Try
 
-        Await tcs.Task
+        Await tcs.Task.ConfigureAwait(False)
     End Function
 End Class
