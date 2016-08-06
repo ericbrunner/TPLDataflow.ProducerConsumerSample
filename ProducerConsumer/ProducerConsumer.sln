@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ConsoleUI", "ConsoleUI\ConsoleUI.vbproj", "{213750C1-F883-4CD9-BD8B-E4068D611348}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TPLDataflow.ProducerConsumerLayer", "TPLDataflow.ProducerConsumerLayer\TPLDataflow.ProducerConsumerLayer.vbproj", "{EFFD97DF-2B65-4254-9FDB-257D123DF209}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{213750C1-F883-4CD9-BD8B-E4068D611348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{213750C1-F883-4CD9-BD8B-E4068D611348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{213750C1-F883-4CD9-BD8B-E4068D611348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{213750C1-F883-4CD9-BD8B-E4068D611348}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFFD97DF-2B65-4254-9FDB-257D123DF209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFD97DF-2B65-4254-9FDB-257D123DF209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFD97DF-2B65-4254-9FDB-257D123DF209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFFD97DF-2B65-4254-9FDB-257D123DF209}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
