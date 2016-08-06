@@ -3,13 +3,16 @@
 Module Module1
 
     Sub Main()
-        Dim tasks As IEnumerable(Of Task) = New List(Of Task)
+        Dim tasks = New List(Of Task)
 
         Try
             dim producer = ProducerConsumerDataflow.StartProducerAsync()
+            tasks.Add(producer)
+
             Dim consumer = ProducerConsumerDataflow.StartConsumerAsync()
-            
-            Task.WaitAll(tasks)
+            tasks.Add(consumer)
+
+            Task.WaitAll(tasks.ToArray())
         Catch ex As Exception
             If (Typeof(ex) Is AggregateException) Then
 
