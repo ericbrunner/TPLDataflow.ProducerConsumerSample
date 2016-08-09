@@ -22,7 +22,10 @@ Module Module1
                 Dim aggregateException = DirectCast(ex, AggregateException)
                 Dim flattenedException = aggregateException.Flatten()
 
-                Console.WriteLine(flattenedException.InnerException)
+
+                For Each exception In flattenedException.InnerExceptions
+                    Console.WriteLine(flattenedException.InnerException)
+                Next
                 Exit Try
             End If
 
